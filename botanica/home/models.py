@@ -47,7 +47,7 @@ class Plant(models.Model):
     plan = models.CharField(max_length=10, choices=plan_types.choices, default=plan_types.no_plan,verbose_name="Plan")
     updated_at = models.DateTimeField(auto_now=True,verbose_name="Güncelleme Tarihi")
     created_at = models.DateTimeField(auto_now_add=True,verbose_name="Oluşturulma Tarihi",null=True)
-    image = models.ImageField(upload_to="media/", blank=True, null=True,verbose_name="Resim")
+    image = models.ImageField(upload_to="home/media/plants/", blank=True, null=True,verbose_name="Resim")
 
     def __str__(self):
         return f"{self.common_name} ({self.scientific_name})"

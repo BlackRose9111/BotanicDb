@@ -1,0 +1,23 @@
+{% extends "home/common/header.html" %}
+
+{% block body %}
+
+    <body>
+    <div>
+        <h1>{{ plant.common_name }}</h1>
+
+    </div>
+    <br>
+    <div>
+        <img src="{{ plant.image.url }}" alt="plant image" width="500" height="600">
+    </div>
+    <br>
+    <div>
+        <h3>Plant Description</h3>
+        <p>{{ plant.description }}</p>
+    </div>
+    <br>
+
+
+    </body>
+{% endblock %}
