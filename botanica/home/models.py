@@ -25,6 +25,12 @@ class Plant(models.Model):
         under_the_pot = "Saksı Altı" , "Saksı Altı"
         no_plan = "Plan Yok", "Plan Yok"
 
+    class leaf_size(models.TextChoices):
+        small = "Küçük", "Küçük"
+        medium = "Orta", "Orta"
+        large = "Büyük", "Büyük"
+        unknown = "Bilinmiyor", "Bilinmiyor"
+
     common_name = models.CharField(max_length=1000,blank=True, null=True, unique=True,verbose_name="Bilinen Adı")
     scientific_name = models.CharField(max_length=1000,blank=True, null=True, unique=True,verbose_name="Bilimsel Adı")
     description = models.TextField(blank=True, null=True,verbose_name="Açıklama")
@@ -45,6 +51,10 @@ class Plant(models.Model):
     woody_type = models.CharField(max_length=10, choices=woody_type.choices, default=woody_type.bilinmiyor,verbose_name="Odunsu/Otsu(Herbaceous)")
     yearly_shoots = models.BooleanField(default=False,verbose_name="Her Yıl Yeni Sürgün")
     plan = models.CharField(max_length=10, choices=plan_types.choices, default=plan_types.no_plan,verbose_name="Plan")
+    soil_preference = models.CharField(max_length=1000,blank=True, null=True,verbose_name="Toprak İsteği")
+    disease_resistance = models.CharField(max_length=10, choices=resistance.choices, default=resistance.UNKNOWN,verbose_name="Hastalık Direnci")
+    leaf_size = models.CharField(max_length=10, choices=leaf_size.choices, default=leaf_size.unknown,verbose_name="Yaprak Boyutu")
+    winter_leaf_shedding = models.BooleanField(null=True,default=None,verbose_name="Kışın Yaprak Döküyor")
     updated_at = models.DateTimeField(auto_now=True,verbose_name="Güncelleme Tarihi")
     created_at = models.DateTimeField(auto_now_add=True,verbose_name="Oluşturulma Tarihi",null=True)
     image = models.ImageField(upload_to="home/media/plants/", blank=True, null=True,verbose_name="Resim")
