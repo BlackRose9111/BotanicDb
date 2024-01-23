@@ -1,0 +1,50 @@
+.button-succes{
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+    color: #fff;
+    border-radius: 4px;
+
+}
+.button-succes:hover{
+    background-color: #449d44;
+    border-color: #398439;
+    color: #fff;
+}
+.button-danger{
+    background-color: #d9534f;
+    border-color: #d43f3a;
+    color: #fff;
+    border-radius: 4px;
+}
+.button-danger:hover{
+    background-color: #c9302c;
+    border-color: #ac2925;
+    color: #fff;
+}
+.button-alert{
+    background-color: #f0ad4e;
+    border-color: #eea236;
+    color: #fff;
+    border-radius: 4px;
+}
+.button-alert:hover{
+    background-color: #ec971f;
+    border-color: #d58512;
+    color: #fff;
+}
+.button-info{
+    background-color: #5bc0de;
+    border-color: #46b8da;
+    color: #fff;
+    border-radius: 4px;
+}
+.button-info:hover{
+    background-color: #31b0d5;
+    border-color: #269abc;
+    color: #fff;
+}
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
