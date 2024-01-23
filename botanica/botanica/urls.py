@@ -21,8 +21,6 @@ from django.urls import path, include
 
 admin.site.site_header = "Botanica Admin"
 admin.site.site_title = "Botanica Admin Portalı"
-
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", include("home.urls")),
