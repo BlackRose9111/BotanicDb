@@ -1,50 +1,82 @@
-.button-succes{
-    background-color: #5cb85c;
+:root{
+
+    --success-color: #5cb85c;
+    --success-hover-color: #449d44;
+    --danger-color: #d9534f;
+    --danger-hover-color: #c9302c;
+    --alert-color: #f0ad4e;
+    --alert-hover-color: #ec971f;
+    --info-color: #5bc0de;
+    --info-hover-color: #31b0d5;
+
+
+}
+
+
+* {
+    font-family: "Times New Roman", serif;
+    font-size: 100%;
+
+}
+
+.button-succes {
+    background-color: var(--success-color);
     border-color: #4cae4c;
     color: #fff;
     border-radius: 4px;
+    padding: 5px 10px;
+
+
 
 }
-.button-succes:hover{
-    background-color: #449d44;
+
+.button-succes:hover {
+    background-color: var(--success-hover-color);
     border-color: #398439;
     color: #fff;
 }
-.button-danger{
-    background-color: #d9534f;
+
+.button-danger {
+    background-color: var(--danger-color);
     border-color: #d43f3a;
     color: #fff;
     border-radius: 4px;
 }
-.button-danger:hover{
-    background-color: #c9302c;
+
+.button-danger:hover {
+    background-color: var(--danger-hover-color);
     border-color: #ac2925;
     color: #fff;
 }
-.button-alert{
-    background-color: #f0ad4e;
+
+.button-alert {
+    background-color: var(--alert-color);
     border-color: #eea236;
     color: #fff;
     border-radius: 4px;
 }
-.button-alert:hover{
-    background-color: #ec971f;
+
+.button-alert:hover {
+    background-color: var(--alert-hover-color);
     border-color: #d58512;
     color: #fff;
 }
-.button-info{
-    background-color: #5bc0de;
+
+.button-info {
+    background-color: var(--info-color);
     border-color: #46b8da;
     color: #fff;
     border-radius: 4px;
 }
-.button-info:hover{
-    background-color: #31b0d5;
+
+.button-info:hover {
+    background-color: var(--info-hover-color);
     border-color: #269abc;
     color: #fff;
 }
+
 .button:active {
-  background-color: #3e8e41;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
 }
