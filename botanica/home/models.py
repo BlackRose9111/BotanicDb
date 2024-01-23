@@ -56,3 +56,14 @@ class Plant(models.Model):
 
 
 
+class PlantOfTheDay(models.Model):
+    plant = models.ForeignKey(Plant, on_delete=models.CASCADE,verbose_name="Bitki")
+    date = models.DateField(verbose_name="Tarih")
+
+    def __str__(self):
+        return str(self.plant)
+
+    class Meta:
+        verbose_name = "Günün Bitkisi"
+        verbose_name_plural = "Günün Bitkileri"
+        ordering = ["-date"]
