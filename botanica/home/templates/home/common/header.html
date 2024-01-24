@@ -7,13 +7,20 @@
         <meta charset="UTF-8">
         <title>Botanica</title>
         <link rel="icon" type="image/png" href={% static 'favicon.png' %}>
-        <link rel="stylesheet" href={% static 'styles/styles.css' %}>
+        <link rel="stylesheet" href={% static 'styles/css/bootstrap.min.css' %}>
+        <link rel="stylesheet" href="{% static "styles/font.css" %}">
+
+
     </head>
 
     <body>
     {% block body %}
 
     {% endblock %}
+
+    <script src="{% static 'script/jquery-3.7.1.js' %}"></script>
+    <script src="{% static 'script/js/bootstrap.bundle.min.js' %}"></script>
+
     </body>
 {% endblock %}
 
