@@ -22,7 +22,7 @@ from django.urls import path, include
 admin.site.site_header = "Botanica Admin"
 admin.site.site_title = "Botanica Admin Portalı"
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path("", include("home.urls")),
+    path('admin/', admin.site.urls,name="admin"),
+    path("", include("home.urls"),name="home"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 #urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
