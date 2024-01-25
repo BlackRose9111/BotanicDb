@@ -4,25 +4,24 @@
 
     {% include "home/common/navbar.html" %}
 
-    <div>
-        Hello World!
-    </div>
 
-    <button type="button" class="btn btn-primary">Primary</button>
-    <button type="button" class="btn btn-secondary">Info</button>
-    <button type="button" class="btn btn-warning">Alert</button>
-    <button type="button" class="btn btn-danger">Danger</button>
+    <div class="container my-3">
 
-    <br>
-    <div class="container-xxl">
+        <a href="#" class="btn btn-primary">Ekle</a>
 
-        {% for item in plants %}
-            a
-            {% include "home/common/card.html" with item=item %}
+        <div class="d-flex flex-wrap justify-content-center">
 
-        {% endfor %}
+            {% for item in plants %}
+
+                {% include "home/common/card.html" with item=item %}
+
+            {% endfor %}
+
+        </div>
 
     </div>
+
+
 
 
 

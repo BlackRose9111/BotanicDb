@@ -5,8 +5,9 @@ from django.contrib.auth import logout
 def index(request):
 
     all_plants = list(models.Plant.objects.all())
-    print(all_plants)
-    return render(request, "home/index.html", {"plants": all_plants})
+    all_plants2 = [ all_plants[0] for i in range(0, 50)]
+
+    return render(request, "home/index.html", {"plants": all_plants2})
 
 
 def plant(request):
