@@ -1,28 +1,47 @@
 {% block navbar %}
     {% load static %}
-    <nav class="navbar navbar-dark bg-dark mb-auto  navbar-expand-lg p-2">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <!-- Left Side Of Navbar -->
-            <div class="container me-auto">
-                <a class="navbar-brand" href="{% url "home" %}">Botanica</a>
-                <a class="nav-link" href="#">Advanced Search</a>
-                <a class="nav-link text-light" href="{% url "admin:index" %}">Admin</a>
-            </div>
-            <!-- Right Side Of Navbar -->
-            <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#NavbarToggler"
+                    aria-controls="NavbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="{% url "home" %}">
+                <span class="fw-bold">
+                    Botanica
+                </span>
+            </a>
+            <div class="collapse navbar-collapse" id="NavbarToggler">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url "admin:index" %}">Admin</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url "search" %}">Advanced Search</a>
+                    </li>
 
-                {% if user.is_authenticated %}
-                    <a class="nav-link text-light" href="{% url "logout" %}">Logout</a>
-                {% else %}
 
-                    <a class="nav-link text-light" href="{% url "login" %}">Login</a>
-                    <a class="nav-link text-light" href="{% url "register" %}">Register</a>
 
-                {% endif %}
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
+                </ul>
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url "logout" %}">Logout</a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url "login" %}">Login</a>
+                        </li>
+                    {% endif %}
+
+
+                    <li class="nav-item">
+                        <form class="d-flex">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        </form>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
