@@ -48,7 +48,7 @@ class Plant(models.Model):
     harmful_to_cats = models.BooleanField(default=False, null=True,verbose_name="Kediler İçin Zararlı")
     hours_of_sunlight = models.IntegerField(null=True,verbose_name="Kaç Saat Güneş Işığı Alabilir",default=0)
     litres_of_soil = models.IntegerField(null=True,verbose_name="Kaç Litre Toprak İhtiyacı Var",default=0)
-    woody_type = models.CharField(max_length=10, choices=woody_type.choices, default=woody_type.bilinmiyor,verbose_name="Odunsu/Otsu(Herbaceous)")
+    woody_type = models.CharField(max_length=10, choices=woody_type.choices, default=woody_type.bilinmiyor,verbose_name="Odunsu/Otsu")
     yearly_shoots = models.BooleanField(default=False,verbose_name="Her Yıl Yeni Sürgün")
     plan = models.CharField(max_length=10, choices=plan_types.choices, default=plan_types.no_plan,verbose_name="Plan")
     soil_preference = models.CharField(max_length=1000,blank=True, null=True,verbose_name="Toprak İsteği")

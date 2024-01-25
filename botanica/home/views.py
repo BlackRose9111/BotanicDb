@@ -4,13 +4,15 @@ from django.contrib.auth import logout
 
 def index(request):
 
-
-    return render(request, "home/index.html", {})
+    all_plants = list(models.Plant.objects.all())
+    print(all_plants)
+    return render(request, "home/index.html", {"plants": all_plants})
 
 
 def plant(request):
     plant_id = request.GET.get("plant_id")
     plant = models.Plant.objects.get(id=plant_id)
+
     return render(request, "home/plant.html", {"plant":plant})
 
 

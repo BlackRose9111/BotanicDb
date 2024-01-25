@@ -2,7 +2,7 @@
 {% load static %}
 {% block body %}
 
-{% include "home/common/navbar.html" %}
+    {% include "home/common/navbar.html" %}
 
     <div>
         Hello World!
@@ -13,6 +13,16 @@
     <button type="button" class="btn btn-warning">Alert</button>
     <button type="button" class="btn btn-danger">Danger</button>
 
+    <br>
+    <div class="container-xxl">
+
+        {% for item in all_plants %}
+            a
+            {% include "home/common/card.html" with item=item %}
+
+        {% endfor %}
+
+    </div>
 
 
 
