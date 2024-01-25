@@ -1,0 +1,14 @@
+{% load static %}
+{% block card %}
+
+    <a class="card" style="width:18rem" href="{% url "plant" %}?plant_id={{ item.id }}">
+        {% if item.image %}
+            <img src="{{ item.image.url }}" class="card-img-top" alt="Image Not Loaded">
+        {% endif %}
+        <div class="card-body">
+            <h5 class="card-title">{{ item }}</h5>
+            <p class="card-text">{{ item.description }}</p>
+        </div>
+    </a>
+
+{% endblock %}
