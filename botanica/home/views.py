@@ -8,7 +8,8 @@ def index(request):
     return render(request, "home/index.html", {})
 
 
-def plant(request, plant_id : int ):
+def plant(request):
+    plant_id = request.GET.get("plant_id")
     plant = models.Plant.objects.get(id=plant_id)
     return render(request, "home/plant.html", {"plant":plant})
 
@@ -16,7 +17,8 @@ def plant(request, plant_id : int ):
 def logout_view(request):
     #logout the user and then render the homepage
     logout(request)
-    return redirect('home')
+    #return to the current page
+    return redirect(request.META['HTTP_REFERER'])
 
 def login_view(request):
     #redirect to the admin login page for now
