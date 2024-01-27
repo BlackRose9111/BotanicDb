@@ -36,7 +36,7 @@ class Plant(models.Model):
     description = models.TextField(blank=True, null=True,verbose_name="Açıklama")
     most_fertile_type = models.CharField(max_length=1000,blank=True, null=True,verbose_name="En Verimli Türü")
     bonsai = models.BooleanField(default=False,verbose_name="Bonsai İçin Uygun")
-    available_in_turkey = models.BooleanField(default=False,verbose_name="Türkiye'de Bulunabilir")
+    #available_in_turkey = models.BooleanField(default=False,verbose_name="Türkiye'de Bulunabilir")
     maximum_height = models.IntegerField(null=True,verbose_name="Max Yükseklik")
     min_temperature_resistance = models.IntegerField(null=True,verbose_name="Min Sıcaklık Direnci")
     max_temperature_resistance = models.IntegerField(null=True,verbose_name="Max Sıcaklık Direnci")
@@ -77,3 +77,15 @@ class PlantOfTheDay(models.Model):
         verbose_name = "Günün Bitkisi"
         verbose_name_plural = "Günün Bitkileri"
         ordering = ["-date"]
+
+class AvailableInTurkey(models.Model):
+    plant = models.ForeignKey(Plant, on_delete=models.CASCADE,verbose_name="Bitki",unique=True)
+    created_at = models.DateTimeField(auto_now_add=True,verbose_name="Oluşturulma Tarihi",null=True)
+    updated_at = models.DateTimeField(auto_now=True,verbose_name="Güncelleme Tarihi")
+
+    def __str__(self):
+        return str(self.plant)
+
+    class Meta:
+        verbose_name = "Türkiye'de Bulunabilir Bitki"
+        verbose_name_plural = "Türkiye'de Bulunabilir Bitkiler"

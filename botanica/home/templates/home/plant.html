@@ -3,31 +3,10 @@
 {% block body %}
 
     {% include "home/common/navbar.html" %}
-    this will allow to edit or delete the plant if the user is authenticated
-    <div>
-        <h1>{{ plant.common_name }}</h1>
-
-    </div>
-    <br>
-    <div>
-        {% if plant.image %}
-            <img src="{{ plant.image.url }}" alt="plant image" width="500" height="600">
-        {% endif %}
-
-    </div>
-    <br>
-    <div>
-        <h3>Plant Description</h3>
-        <p>{{ plant.description }}</p>
-    </div>
-    <br>
-
-    {% if user.is_authenticated %}
-        <a class="btn btn-primary">Edit</a>
-        <a class="btn btn-danger">Delete</a>
 
 
-    {% endif %}
+    {% include "home/common/plantinfo.html" %}
+
 
 
 {% endblock %}
